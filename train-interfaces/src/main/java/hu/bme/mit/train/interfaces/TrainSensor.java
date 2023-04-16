@@ -6,4 +6,10 @@ public interface TrainSensor {
 
 	void overrideSpeedLimit(int speedLimit);
 
+	void setAlarmState(boolean state);
+
+	boolean getAlarmState();
+
+	boolean alarmNeeded(int speed);
+
 }
