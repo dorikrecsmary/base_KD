@@ -30,14 +30,13 @@ public class TrainUserImpl implements TrainUser {
 	public void overrideJoystickPosition(int joystickPosition) {
 		this.joystickPosition = joystickPosition;
 
-
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			@Override
 			public void run() {
 				controller.setJoystickPosition(joystickPosition);
 			}
-		}, 5000);
+		}, 1);
 
 
 		//controller.setJoystickPosition(joystickPosition);
