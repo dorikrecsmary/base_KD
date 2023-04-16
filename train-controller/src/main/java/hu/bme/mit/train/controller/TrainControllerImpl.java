@@ -26,8 +26,6 @@ public class TrainControllerImpl implements TrainController {
             }
 		}
 		
-
-		
 		emergencyBreak(referenceSpeed);
 		enforceSpeedLimit();
 		String date = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new java.util.Date());
