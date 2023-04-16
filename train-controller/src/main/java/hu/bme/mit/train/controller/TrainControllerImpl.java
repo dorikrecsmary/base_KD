@@ -26,8 +26,6 @@ public class TrainControllerImpl implements TrainController {
             }
 		}
 		
-
-		
 		emergencyBreak(referenceSpeed);
 		enforceSpeedLimit();
 		String date = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new java.util.Date());
@@ -40,8 +38,6 @@ public class TrainControllerImpl implements TrainController {
 	public int getReferenceSpeed() {
 		return referenceSpeed;
 	}
-
-	
 
 	@Override
 	public int getSpeed(String date) {
@@ -63,7 +59,13 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
-		this.step = joystickPosition;		
+		if(this.step>joystickPosition){
+			this.step = joystickPosition;
+			referenceSpeed = referenceSpeed-step;
+		}else{
+			this.step = joystickPosition;
+			referenceSpeed = referenceSpeed+step;
+		}
 	}
 
 	public void emergencyBreak(int referenceSpeed){
