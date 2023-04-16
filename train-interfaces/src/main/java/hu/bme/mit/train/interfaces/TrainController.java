@@ -12,4 +12,6 @@ public interface TrainController {
 
 	int getSpeed(String date);
 
+	void setReferenceSpeed(int speed);
+
 }

@@ -74,4 +74,9 @@ public class TrainControllerImpl implements TrainController {
 		}
 	}
 
+	@Override
+	public void setReferenceSpeed(int speed){
+		referenceSpeed = speed;
+	}
+
 }
